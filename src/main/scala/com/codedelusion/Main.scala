@@ -8,7 +8,7 @@ object Main extends App {
 
 	implicit val system = ActorSystem("SprayExample1")
 
-  val demoactor = system.actorOf(Props[DemoActor], "DempActor")
+  val demoactor = system.actorOf(Props[DemoActor], "DemoActor")
 
 	IO(Http)(system) ! Http.Bind(demoactor, "0.0.0.0", port = 8080)
 
